@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class ArquivoTextoLeitura {
 
 	private BufferedReader entrada;

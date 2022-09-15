@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class ArquivoTextoEscrita {
 	private BufferedWriter saida;
 
