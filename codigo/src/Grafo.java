@@ -77,7 +77,14 @@ public class Grafo {
     }
 
     public Aresta existeAresta(int verticeA, int verticeB){
-       return null;
+        //    	 Vertice saida = this.existeVertice(origem);
+        //         Vertice chegada = this.existeVertice(destino);
+                //int destino = verticeB;
+                Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
+                if (aresta != null) 
+                    return aresta;
+                
+                return null;
     }
     
     /**
