@@ -56,6 +56,14 @@ public class Vertice {
         return this.arestas.find(destino);
 
     }
+
+    public Aresta arestaApontandoPara(int destino){
+        if(existeAresta(destino) != null){
+            return existeAresta(destino);
+        }
+
+        return null;
+    }
     
     /**
      * Retorna o grau do vértice
