@@ -22,80 +22,113 @@
  * SOFTWARE.
  */
 
-/**
+/** 
  * Classe básica para um Grafo simples
  */
 public class Grafo {
     public final String nome;
-    protected ABB<Vertice> vertices;
+    private ABB<Vertice> vertices;
 
     /**
      * Construtor. Cria um grafo vazio com capacidade para MAX_VERTICES
      */
-    public Grafo(String nome) {
+    public Grafo(String nome){
         this.nome = nome;
         this.vertices = new ABB<>();
     }
 
-    public Lista<Vertice> caminhoEuleriano() {
+    public void carregar(String nomeArquivo){
+        ArquivoTextoLeitura arq = new ArquivoTextoLeitura(nomeArquivo);
+        String linha = arq.ler();
+		while(linha != null){
+            
+            String[] vertices = linha.split(";");
+            int id1 = Integer.parseInt(vertices[0]);
+            int id2 = Integer.parseInt(vertices[1]);
 
-    } return ;
+            if(existeVertice(id1) == null){
+                this.addVertice(id1);
+            }
+            if(existeVertice(id2) == null){
+                this.addVertice(id2);
+            }
+            this.addAresta(id1, id2);
+
+			linha = arq.ler();
+		}
+
+        arq.fecharArquivo();
+    }
+
+    public void salvar(String nomeArquivo){
+        
+    }
+    /**
+     * Adiciona, se possível, um vértice ao grafo. O vértice é auto-nomeado com o próximo id disponível.
+     */
+    public boolean addVertice(int id){
+        Vertice novo = new Vertice(id);
+        return this.vertices.add(id, novo);
+    }
 
     /**
-     * Verifica se este é um grafo completo.
-     * 
-     * @return TRUE para grafo completo, FALSE caso contrário
+     * Adiciona uma aresta entre dois vértices do grafo. 
+     * Não verifica se os vértices pertencem ao grafo.
+     * @param origem Vértice de origem
+     * @param destino Vértice de destino
      */
-    public boolean completo() {
-        boolean resposta = true;
+    public boolean addAresta(int origem, int destino){
+        boolean adicionou = false;
+        Vertice saida = this.existeVertice(origem);
+        Vertice chegada = this.existeVertice(destino);
+        if(saida!=null && chegada !=null){
+            saida.addAresta(destino);
+            chegada.addAresta(origem);
+            adicionou = true;
+        }
+        
+        return adicionou;
 
-        return resposta;
     }
 
-    public boolean eureliano() {
-        boolean resposta = true;
-
-        return resposta;
-
-    }
-
-    public Aresta existeAresta(int verticeA, int verticeB) {
-        // Vertice saida = this.existeVertice(origem);
-        // Vertice chegada = this.existeVertice(destino);
-        // int destino = verticeB;
-        Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
-        if (aresta != null)
-            return aresta;
-
-        return null;
-    }
-
-    public Vertice existeVertice(int idVertice) {
+    public Vertice existeVertice(int idVertice){
         return this.vertices.find(idVertice);
     }
 
-    public int ordem() {
-        return this.vertices.size();
+    public Aresta existeAresta(int verticeA, int verticeB){
+        //    	 Vertice saida = this.existeVertice(origem);
+        //         Vertice chegada = this.existeVertice(destino);
+                //int destino = verticeB;
+                Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
+                if (aresta != null) 
+                    return aresta;
+                
+                return null;
+    }
+    
+    /**
+     * Verifica se este é um grafo completo. 
+     * @return TRUE para grafo completo, FALSE caso contrário
+     */
+    public boolean completo(){
+        boolean resposta = true;
+        
+       return resposta;
     }
 
-
-    public Grafo subGrafo(Lista<Vertice> vertices) {
-        Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
+    public Grafo subGrafo(Lista<Vertice> vertices){
+        Grafo subgrafo = new Grafo("Subgrafo de "+this.nome);
+        
 
         return subgrafo;
     }
+    
+    public int tamanho(){
+        return 0;
+    }
 
-    public int tamanho() {
-        Vertice[] vert = new Vertice[vertices.size()];
-        vertices.allElements(vert);
-
-        int qtdeArestas = 0;
-        
-        for (int i = 1; i < vert.length; i++){
-            qtdeArestas += vert[i].grau();
-        }
-
-        return ordem() + (qtdeArestas/2);
+    public int ordem(){
+        return this.vertices.size();
     }
 
 }

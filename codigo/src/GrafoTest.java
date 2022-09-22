@@ -62,4 +62,19 @@ public class GrafoTest {
         int ordem = grafo.ordem();
         assertEquals(3, ordem);
     }
+
+    @Test
+    void testCarregar(){
+        String caminho = "E:/puc/6 SEM/prog modular/team2/projeto2-t-e-a-m/codigo/src/grafo.txt";
+        grafo.carregar(caminho);
+        assertNotEquals(null, grafo.existeAresta(1, 2));
+        assertNotEquals(null, grafo.existeAresta(3, 2));
+        assertNotEquals(null, grafo.existeAresta(2, 1));
+        assertNotEquals(null, grafo.existeAresta(1, 1));
+        assertNotEquals(null, grafo.existeAresta(0, 0));
+
+        assertNotEquals(null, grafo.existeVertice(1));
+        assertNotEquals(null, grafo.existeVertice(2));
+    }
+        
 }
