@@ -65,7 +65,7 @@ public class GrafoTest {
 
     @Test
     void testCarregar(){
-        String caminho = "E:/puc/6 SEM/prog modular/team2/projeto2-t-e-a-m/codigo/src/grafo.txt";
+        String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
         grafo.carregar(caminho);
         assertNotEquals(null, grafo.existeAresta(1, 2));
         assertNotEquals(null, grafo.existeAresta(3, 2));
