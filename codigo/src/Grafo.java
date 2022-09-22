@@ -131,4 +131,25 @@ public class Grafo {
         return this.vertices.size();
     }
 
+    public Grafo criarCompleto(Grafo grafo, int vertices) {	
+    	int numVertices = vertices;
+    	int destino;
+    	int origem;
+    	
+    	for(int i = 1;i < numVertices;i++) {
+    		
+    		grafo.addVertice(i);
+    		
+    		if(i != 1) {
+    			for(int x = i; x > 1; x--) {
+    				origem = i;
+    				destino = x--;
+    				grafo.addAresta(origem, destino);
+    			}
+    		}
+    	}
+    	    	
+    	return grafo;
+    }
+
 }
