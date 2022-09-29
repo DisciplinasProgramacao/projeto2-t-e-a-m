@@ -27,7 +27,8 @@
  */
 public class Grafo {
     public final String nome;
-    private ABB<Vertice> vertices;
+    //private
+    protected ABB<Vertice> vertices;
 
     /**
      * Construtor. Cria um grafo vazio com capacidade para MAX_VERTICES

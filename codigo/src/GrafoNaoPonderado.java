@@ -1,7 +1,11 @@
 public class GrafoNaoPonderado extends GrafoMutavel{
 
 
-    /**
+    public GrafoNaoPonderado(String nome, ABB<Vertice> vertices) {
+		super(nome, vertices);
+	}
+
+	/**
      * Adiciona uma aresta entre dois vértices do grafo.
      * Não verifica se os vértices pertencem ao grafo.
      * 
@@ -25,7 +29,7 @@ public class GrafoNaoPonderado extends GrafoMutavel{
     public GrafoNaoPonderado subGrafo(Lista<Vertice> vertices) {
         Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
 
-        return subgrafo;
+        return (GrafoNaoPonderado) subgrafo;
     }
     
     
