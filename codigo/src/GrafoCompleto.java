@@ -2,7 +2,7 @@ public class GrafoCompleto extends Grafo {
 
 	private int ordem;
 
-	public GrafoCompleto(String nome, ABB<Vertice> vertices, int ordem) {
+	public GrafoCompleto(String nome, int ordem) {
 		super(nome);
 		setOrdem(ordem);
 	}
@@ -45,6 +45,7 @@ public class GrafoCompleto extends Grafo {
 		return false;
 	}
 
+	@Override
 	public GrafoCompleto subGrafo(Lista<Vertice> vertices) {
 		Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
 
