@@ -1,37 +1,36 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class GrafoTest {
 
     Grafo grafo;
-    
-	@BeforeEach	
-	void setUp() throws Exception {
-		grafo = new Grafo("teste");
-	}
-    
+
+    @BeforeEach
+    void setUp() throws Exception {
+        grafo = new Grafo("teste");
+    }
+
     @Test
-	void testAddVertice() {
+    void testAddVertice() {
 
         boolean ver1 = grafo.addVertice(1);
         boolean ver2 = grafo.addVertice(2);
-		assertTrue(ver1);
+        assertTrue(ver1);
         assertTrue(ver2);
-	
-	}
+
+    }
 
     @Test
     void testExisteVertice() {
 
-        grafo.addVertice(1); 
-        
+        grafo.addVertice(1);
+
         Vertice ext1 = grafo.existeVertice(1);
         assertNotEquals(ext1, null);
 
         Vertice ext3 = grafo.existeVertice(3);
-        assertNotEquals(ext3, null);
+        assertEquals(ext3, null);
 
     }
 
@@ -49,12 +48,12 @@ public class GrafoTest {
     }
 
     @Test
-    void testExisteAresta(){
-        
+    void testExisteAresta() {
+
     }
 
     @Test
-    void testOrdem(){
+    void testOrdem() {
         grafo.addVertice(1);
         grafo.addVertice(2);
         grafo.addVertice(3);
@@ -64,7 +63,7 @@ public class GrafoTest {
     }
 
     @Test
-    void testCarregar(){
+    void testCarregar() {
         String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
         grafo.carregar(caminho);
         assertNotEquals(null, grafo.existeAresta(1, 2));
@@ -76,5 +75,5 @@ public class GrafoTest {
         assertNotEquals(null, grafo.existeVertice(1));
         assertNotEquals(null, grafo.existeVertice(2));
     }
-        
+
 }
