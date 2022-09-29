@@ -111,12 +111,17 @@ public class Grafo {
 
     /**
      * Verifica se este é um grafo completo.
+     * O número de arestas de um grafo completo é igual ao
+     * numero de arestas x (numero de arestas -1)/2
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      */
     public boolean completo(vertice) {
-        boolean resposta = true;
-        Aresta aresta = vertices.find(vertice).arestaApontandoPara(verticeB);
+        int numVertices = this.ordem();
+        int numArestas = this.tamanho() - numVertices;
+        
+        if(numArestas = numVertices*(numVertices-1)/2)
+            return true;
 
         return resposta;
     }
@@ -127,9 +132,24 @@ public class Grafo {
         return subgrafo;
     }
 
+        /**
+     * O tamanho de um grafo é a soma dos seus vértices e suas arestas.
+     * 
+     * @return TRUE para grafo completo, FALSE caso contrário
+     */
+
     public int tamanho() {
-        return 0;
+        int numVertices = this.ordem();
+        int numArestas = 0;
+        int tamanho = 0;
+
+        for(int i =1; i < numVertices; i++){
+            numArestas += vertice.grau();
+        }
+        tamanho = numVertices + numArestas;
+        return tamanho;
     }
+
 
     public int ordem() {
         return this.vertices.size();
