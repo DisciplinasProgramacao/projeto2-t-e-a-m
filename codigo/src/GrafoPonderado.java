@@ -7,6 +7,12 @@ public class GrafoPonderado extends GrafoMutavel{
      * @param origem  Vértice de origem
      * @param destino Vértice de destino
      */
+	
+	public GrafoPonderado(String nome, ABB<Vertice> vertices) {
+	super(nome, vertices);
+	
+	}
+	
     public boolean addAresta(int origem, int destino) {
         boolean adicionou = false;
         Vertice saida = this.existeVertice(origem);
@@ -20,15 +26,21 @@ public class GrafoPonderado extends GrafoMutavel{
         return adicionou;
 
     }
+    
+    public boolean addAresta(int origem, int destino, int peso) {
+    	
+    	return false;
+    }
 
     public void carregar(String nomeArquivo) {
+    	
     }
 
 
     public GrafoPonderado subGrafo(Lista<Vertice> vertices) {
         Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
 
-        return subgrafo;
+        return (GrafoPonderado) subgrafo;
     }
 
 

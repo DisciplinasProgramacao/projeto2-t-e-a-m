@@ -1,6 +1,11 @@
 public class GrafoMutavel extends Grafo {
 
-    /**
+    public GrafoMutavel(String nome, ABB<Vertice> vertices) {
+		super(nome);
+		
+	}
+
+	/**
      * Adiciona uma aresta entre dois vértices do grafo.
      * Não verifica se os vértices pertencem ao grafo.
      * 
@@ -34,10 +39,12 @@ public class GrafoMutavel extends Grafo {
     }
 
     public boolean delAresta(int origem, int destino) {
+		return false;
 
     }
 
     public boolean delVertice(int idVertice) {
+		return false;
 
     }
 
