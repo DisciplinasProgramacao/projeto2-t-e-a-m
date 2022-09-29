@@ -27,8 +27,7 @@
  */
 public class Grafo {
     public final String nome;
-    //private
-    protected ABB<Vertice> vertices;
+    private ABB<Vertice> vertices;
 
     /**
      * Construtor. Cria um grafo vazio com capacidade para MAX_VERTICES
@@ -62,7 +61,19 @@ public class Grafo {
     }
 
     public void salvar(String nomeArquivo) {
+        Vertice[] ver = new Vertice[vertices.size()];
+        vertices.allElements(ver);
+        ArquivoTextoEscrita arq = new ArquivoTextoEscrita(nomeArquivo);
 
+        for(int i=0; i<vertices.size(); i++){
+            for(int j=0; j<vertices.size(); j++){
+                if(ver[i].arestaApontandoPara(j) != null){
+                    System.out.println(i + ";" + j);
+                    arq.escrever(i + ";" + j);
+                }
+            }
+        }
+        arq.fecharArquivo();
     }
 
     /**

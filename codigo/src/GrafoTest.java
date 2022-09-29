@@ -76,4 +76,12 @@ public class GrafoTest {
         assertNotEquals(null, grafo.existeVertice(2));
     }
 
+    @Test
+    void testSalvar() {
+        String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
+        //String escreve = "";
+        grafo.carregar(caminho);
+        grafo.salvar(caminho);
+    }
+
 }
