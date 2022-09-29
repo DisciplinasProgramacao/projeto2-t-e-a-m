@@ -148,6 +148,7 @@ public class Grafo {
                     origem = i;
                     destino = x--;
                     grafo.addAresta(origem, destino);
+                    grafo.addAresta(destino, origem);
                 }
             }
         }
