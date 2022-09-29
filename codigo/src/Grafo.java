@@ -73,6 +73,10 @@ public class Grafo {
         return this.vertices.add(id, novo);
     }
 
+    public Vertice existeVertice(int idVertice) {
+        return this.vertices.find(idVertice);
+    }
+
     /**
      * Adiciona uma aresta entre dois vértices do grafo.
      * Não verifica se os vértices pertencem ao grafo.
@@ -94,10 +98,6 @@ public class Grafo {
 
     }
 
-    public Vertice existeVertice(int idVertice) {
-        return this.vertices.find(idVertice);
-    }
-
     public Aresta existeAresta(int verticeA, int verticeB) {
         // Vertice saida = this.existeVertice(origem);
         // Vertice chegada = this.existeVertice(destino);
@@ -114,8 +114,9 @@ public class Grafo {
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      */
-    public boolean completo() {
+    public boolean completo(vertice) {
         boolean resposta = true;
+        Aresta aresta = vertices.find(vertice).arestaApontandoPara(verticeB);
 
         return resposta;
     }

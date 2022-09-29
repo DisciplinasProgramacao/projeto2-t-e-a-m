@@ -27,7 +27,8 @@ public class GrafoCompleto extends Grafo {
         return this.vertices.find(idVertice);
     }
 
-    public boolean eureliano (){
+    public boolean eureliano(){
+        boolean resposta = true;
 
     }
 
