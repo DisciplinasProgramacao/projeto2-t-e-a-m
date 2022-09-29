@@ -28,8 +28,20 @@ public class GrafoPonderado extends GrafoMutavel{
     }
     
     public boolean addAresta(int origem, int destino, int peso) {
-    	
-    	return false;
+    	boolean adicionou = false;
+        Vertice saida = this.existeVertice(origem);
+        Vertice chegada = this.existeVertice(destino);
+        
+       // Aresta pesado = this.;
+        
+        if (saida != null && chegada != null) {
+            saida.addAresta(destino);
+            chegada.addAresta(origem);
+         //   pesado;
+            adicionou = true;
+        }
+
+        return adicionou;
     }
 
     public void carregar(String nomeArquivo) {
