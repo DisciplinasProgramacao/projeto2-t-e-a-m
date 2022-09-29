@@ -91,13 +91,6 @@ public class GrafoTest {
 
         assertFalse(grafo.completo());
 
-
-
-
-
-
-
-
     }
 
     @Test
