@@ -99,14 +99,34 @@ public class Grafo {
     }
 
     public Aresta existeAresta(int verticeA, int verticeB) {
-        // Vertice saida = this.existeVertice(origem);
-        // Vertice chegada = this.existeVertice(destino);
-        // int destino = verticeB;
+        /* Vertice saida = this.existeVertice(origem);
+        * Vertice chegada = this.existeVertice(destino);
+        * int destino = verticeB;
+        */
         Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
         if (aresta != null)
             return aresta;
 
         return null;
+    }
+
+    public int numVertices() {
+        return this.ordem();
+
+    }
+
+    public int numArestas() {
+
+        int numVertices = numVertices();
+        int numArestas = 0;
+
+        Vertice[] v = new Vertice[numVertices];
+        vertices.allElements(v);
+
+        for(int i =0; i < numVertices; i++){
+            numArestas += v[i].grau();
+        }
+        return numArestas/2;
     }
 
     /**
@@ -116,14 +136,14 @@ public class Grafo {
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      */
-    public boolean completo(vertice) {
-        int numVertices = this.ordem();
-        int numArestas = this.tamanho() - numVertices;
-        
-        if(numArestas = numVertices*(numVertices-1)/2)
-            return true;
+    public boolean completo() {
+        int numVertices = numVertices();
+        int numArestas = numArestas();
 
-        return resposta;
+        if (numArestas != numVertices * (numVertices - 1) / 2)
+            return false;
+        else
+            return true;
     }
 
     public Grafo subGrafo(Lista<Vertice> vertices) {
@@ -132,24 +152,21 @@ public class Grafo {
         return subgrafo;
     }
 
-        /**
+    /**
      * O tamanho de um grafo é a soma dos seus vértices e suas arestas.
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      */
 
     public int tamanho() {
-        int numVertices = this.ordem();
-        int numArestas = 0;
-        int tamanho = 0;
-
-        for(int i =1; i < numVertices; i++){
-            numArestas += vertice.grau();
-        }
-        tamanho = numVertices + numArestas;
-        return tamanho;
+        return numVertices() + numArestas();
     }
 
+    /*
+     * A ordem de um grafo G é dada pela cardinalidade do
+     * conjunto de vértices, ou seja, pelo número de
+     * vértices de G.
+     */
 
     public int ordem() {
         return this.vertices.size();
