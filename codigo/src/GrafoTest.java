@@ -109,4 +109,12 @@ public class GrafoTest {
 
 
 
+    @Test
+    void testSalvar() {
+        String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
+        //String escreve = "";
+        grafo.carregar(caminho);
+        grafo.salvar(caminho);
+    }
+
 }
