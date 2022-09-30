@@ -39,15 +39,7 @@ public class Aresta {
         this.visitada = false;
     }
 
-    /**
-     * Método de acesso para o peso da aresta
-     * @return the peso
-     */
-    public int peso() {
-        return this.peso;
-    }
-   
-    /**
+     /**
      * Método de acesso para o destino da aresta
      * @return the destino
      */
@@ -55,17 +47,26 @@ public class Aresta {
         return this.destino;
     }
 
-    public void visitar(){
-        this.visitada = true;
-    }
-
     public void limparVisita(){
         this.visitada = false;
+    }
+
+    /**
+     * Método de acesso para o peso da aresta
+     * @return the peso
+     */
+    public int peso() {
+        return this.peso;
     }
 
     public boolean visitada(){
         return this.visitada;
     }
+    
+    public void visitar(){
+        this.visitada = true;
+    }
+
 
     
 
