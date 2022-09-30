@@ -15,7 +15,7 @@ public class GrafoTest {
 
     @Test
     void testCarregar() {
-        String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
+        String caminho = "C:/Users/andre/github-classroom/DisciplinasProgramacao/projeto2-t-e-a-m/codigo/src/grafo.txt";
         grafo.carregar(caminho);
         assertNotEquals(null, grafo.existeAresta(1, 2));
         assertNotEquals(null, grafo.existeAresta(3, 2));
@@ -29,6 +29,7 @@ public class GrafoTest {
 
     @Test
     void testAddVertice() {
+//verificar o efeito dele dar o assert na ordem
 
         boolean ver1 = grafo.addVertice(1);
         boolean ver2 = grafo.addVertice(2);
@@ -39,6 +40,8 @@ public class GrafoTest {
 
     @Test
     void testExisteVertice() {
+
+        //adiciona 3 verticer e verificar se aquele que adicionou existe
         grafo.addVertice(1);
 
         Vertice ext1 = grafo.existeVertice(1);
@@ -75,11 +78,12 @@ public class GrafoTest {
 
     @Test
     void testCompleto() {
+
+        //carregar grafo complexo e depois testar
         grafo.addVertice(1);
         grafo.addVertice(2);
         grafo.addVertice(3);
         grafo.addVertice(4);
-
         grafo.addAresta(1, 2);
         grafo.addAresta(1, 3);
         grafo.addAresta(1, 4);
@@ -111,10 +115,14 @@ public class GrafoTest {
 
     @Test
     void testSalvar() {
-        String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
+        String caminho = "C:/Users/andre/github-classroom/DisciplinasProgramacao/projeto2-t-e-a-m/codigo/src/grafo.txt";
         //String escreve = "";
         grafo.carregar(caminho);
         grafo.salvar(caminho);
     }
 
+
+    // busca em profundidade - gera uma arvore
+    // caminho - criar uma string com caminho ou criar atributo pai - depende da busca em profundidade
+    // caminho eureliano
 }
