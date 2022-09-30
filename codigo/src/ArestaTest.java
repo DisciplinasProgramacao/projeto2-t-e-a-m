@@ -31,7 +31,6 @@ class ArestaTest {
 	}
 
 	@Test
-
 	void testLimparVisita() {
 		aresta.limparVisita();
 		assertFalse(aresta.visitada());

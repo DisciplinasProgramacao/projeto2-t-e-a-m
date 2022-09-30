@@ -61,6 +61,7 @@ public class Vertice {
 
     }
 
+    // apagar trocar por existeAresta
     public Aresta arestaApontandoPara(int destino) {
         if (existeAresta(destino) != null) {
             return existeAresta(destino);

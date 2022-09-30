@@ -1,5 +1,4 @@
 import static org.junit.Assert.assertEquals;
-//import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,45 +7,53 @@ class VerticeTest {
 
 	ABB<Aresta> arestas;
 	private boolean visitado;
-//private int id;
+	// private int id;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		//this.id = id;
+
+		//criar um vertice
+		
+		// this.id = id;
 		this.arestas = new ABB<Aresta>();
 		this.visitado = false;
 	}
 
-//	@Test
-//	void addAresta(int destino) {
-//		assertEquals(0, Aresta.class);
-//	}
-//
-//	@Test
-//	void existeAresta(int destino) {
-//		assertEquals(1, arestas.this.arestas(destino));
-//	}
+	@Test
+	void testAddAresta() {
+		assertEquals(0, Aresta.class);
+	}
+
+	// @Test
+	// void testExisteAresta() {
+	// 	assertEquals(1, this.arestas(destino));
+	// }
 
 	@Test
-	void grau() {
+	void testArestaApontandoPara() {
+
+	}
+
+	@Test
+	void testGrau() {
 		assertEquals(0, arestas.size());
 	}
 
 	@Test
-	void visitar() {
-		this.visitado = true;
-		assertEquals(true, this.visitado);
-	}
-
-	@Test
-	void limparVisita() {
+	void testLimparVisita() {
 		this.visitado = false;
 		assertEquals(false, this.visitado);
 	}
 
 	@Test
-	void visitado() {
+	void testVisitado() {
 		assertEquals(false, this.visitado);
+	}
+
+	@Test
+	void testVisitar() {
+		this.visitado = true;
+		assertEquals(true, this.visitado);
 	}
 
 }
