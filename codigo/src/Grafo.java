@@ -125,11 +125,23 @@ public class Grafo {
      * Verifica se este é um grafo completo.
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
+     * 
+     * NÃO ESTA FUNCIONANDO AINDA
      */
-    public boolean completo() {
-        boolean resposta = true;
+    public boolean completo(Grafo grafo){
+    	
 
-        return resposta;
+    	int vertices = grafo.vertices.size();
+    	int arestas;
+    	boolean resposta;
+    	
+    	
+    	if((((vertices-1)*vertices) / 2) == arestas) {
+         resposta = true;
+    	}else {
+    		resposta = false;
+    	}
+       return resposta;
     }
 
     public Grafo subGrafo(Lista<Vertice> vertices) {
