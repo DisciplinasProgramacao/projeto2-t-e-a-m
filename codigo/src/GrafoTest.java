@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.*;
 
-
 public class GrafoTest {
 
     Grafo grafo;
@@ -19,7 +18,7 @@ public class GrafoTest {
     void testCarregar() {
         String caminho = "projeto2-t-e-a-m/codigo/src/grafo.txt";
         grafo.carregar(caminho);
-        
+
         assertNotEquals(null, grafo.existeAresta(1, 2));
         assertNotEquals(null, grafo.existeAresta(3, 2));
         assertNotEquals(null, grafo.existeAresta(2, 1));
@@ -31,10 +30,7 @@ public class GrafoTest {
     }
 
     @Test
-    void salvar(){
-
-
-
+    void salvar() {
 
     }
 
@@ -65,7 +61,6 @@ public class GrafoTest {
         grafo.addVertice(2);
         grafo.addVertice(3);
 
-
         boolean adicionou1 = grafo.addAresta(1, 2);
         boolean adicionou2 = grafo.addAresta(2, 3);
         boolean adicionou3 = grafo.addAresta(3, 4);
@@ -80,12 +75,12 @@ public class GrafoTest {
         grafo.addVertice(2);
         grafo.addAresta(1, 2);
 
-       // assertEquals(null, existeAresta(1,4));
+        // assertEquals(null, existeAresta(1,4));
 
     }
 
     @Test
-    void testNumVertices(){
+    void testNumVertices() {
         grafo.addVertice(1);
         grafo.addVertice(2);
         grafo.addAresta(1, 2);
@@ -93,12 +88,11 @@ public class GrafoTest {
         grafo.addAresta(3, 1);
 
         assertEquals(3, grafo.numVertices());
-    
 
     }
 
     @Test
-    void testNumArestas(){
+    void testNumArestas() {
         grafo.addVertice(1);
         grafo.addVertice(2);
         grafo.addAresta(1, 2);
@@ -107,10 +101,7 @@ public class GrafoTest {
 
         assertEquals(2, grafo.numArestas());
 
-
-
     }
-
 
     }
 
@@ -129,10 +120,27 @@ public class GrafoTest {
         grafo.addAresta(3, 4);
 
         assertTrue(grafo.completo());
-        
+
         grafo.addVertice(5);
 
         assertFalse(grafo.completo());
+
+    }
+
+    @Test
+    void testSubgrafo() {
+
+    }
+
+    @Test
+    void testTamanho() {
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        grafo.addAresta(1, 2);
+        grafo.addVertice(3);
+        grafo.addAresta(3, 1);
+
+        assertEquals(5, grafo.tamanho());
 
     }
 
@@ -142,10 +150,7 @@ public class GrafoTest {
         grafo.addVertice(2);
         grafo.addVertice(3);
 
-        int ordem = grafo.ordem();
-        assertEquals(, ordem);
-
-
+        assertEquals(3, grafo.ordem());
 
 
 }
