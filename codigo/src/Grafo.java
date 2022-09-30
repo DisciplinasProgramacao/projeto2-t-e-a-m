@@ -85,6 +85,10 @@ public class Grafo {
         return this.vertices.add(id, novo);
     }
 
+    public Vertice existeVertice(int idVertice) {
+        return this.vertices.find(idVertice);
+    }
+
     /**
      * Adiciona uma aresta entre dois vértices do grafo.
      * Não verifica se os vértices pertencem ao grafo.
@@ -106,14 +110,11 @@ public class Grafo {
 
     }
 
-    public Vertice existeVertice(int idVertice) {
-        return this.vertices.find(idVertice);
-    }
-
     public Aresta existeAresta(int verticeA, int verticeB) {
-        // Vertice saida = this.existeVertice(origem);
-        // Vertice chegada = this.existeVertice(destino);
-        // int destino = verticeB;
+        /* Vertice saida = this.existeVertice(origem);
+        * Vertice chegada = this.existeVertice(destino);
+        * int destino = verticeB;
+        */
         Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
         if (aresta != null)
             return aresta;
@@ -121,27 +122,42 @@ public class Grafo {
         return null;
     }
 
+    public int numVertices() {
+        return this.ordem();
+
+    }
+
+    public int numArestas() {
+
+        int numVertices = numVertices();
+        int numArestas = 0;
+
+        Vertice[] v = new Vertice[numVertices];
+        vertices.allElements(v);
+
+        for(int i =0; i < numVertices; i++){
+            numArestas += v[i].grau();
+        }
+        return numArestas/2;
+    }
+
     /**
      * Verifica se este é um grafo completo.
+     * O número de arestas de um grafo completo é igual ao
+     * numero de arestas x (numero de arestas -1)/2
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      * 
      * NÃO ESTA FUNCIONANDO AINDA
      */
-    public boolean completo(Grafo grafo){
-    	
+    public boolean completo() {
+        int numVertices = numVertices();
+        int numArestas = numArestas();
 
-    	int vertices = grafo.vertices.size();
-    	int arestas;
-    	boolean resposta;
-    	
-    	
-    	if((((vertices-1)*vertices) / 2) == arestas) {
-         resposta = true;
-    	}else {
-    		resposta = false;
-    	}
-       return resposta;
+        if (numArestas != numVertices * (numVertices - 1) / 2)
+            return false;
+        else
+            return true;
     }
 
     public Grafo subGrafo(Lista<Vertice> vertices) {
@@ -150,9 +166,21 @@ public class Grafo {
         return subgrafo;
     }
 
+    /**
+     * O tamanho de um grafo é a soma dos seus vértices e suas arestas.
+     * 
+     * @return TRUE para grafo completo, FALSE caso contrário
+     */
+
     public int tamanho() {
-        return 0;
+        return numVertices() + numArestas();
     }
+
+    /*
+     * A ordem de um grafo G é dada pela cardinalidade do
+     * conjunto de vértices, ou seja, pelo número de
+     * vértices de G.
+     */
 
     public int ordem() {
         return this.vertices.size();
