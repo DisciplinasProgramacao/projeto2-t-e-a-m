@@ -13,6 +13,7 @@ public class GrafoPonderado extends GrafoMutavel{
 	
 	}
 	
+    @Override
     public boolean addAresta(int origem, int destino) {
         boolean adicionou = false;
         Vertice saida = this.existeVertice(origem);
@@ -44,6 +45,7 @@ public class GrafoPonderado extends GrafoMutavel{
         return adicionou;
     }
 
+    @Override
     public void carregar(String nomeArquivo) {
         ArquivoTextoLeitura arq = new ArquivoTextoLeitura(nomeArquivo);
         String linha = arq.ler();
@@ -68,6 +70,7 @@ public class GrafoPonderado extends GrafoMutavel{
     }
 
 
+    @Override
     public GrafoPonderado subGrafo(Lista<Vertice> vertices) {
         Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
 
