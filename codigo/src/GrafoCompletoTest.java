@@ -6,29 +6,45 @@ import org.junit.jupiter.api.Test;
 
 class GrafoCompletoTest {
 
-	GrafoCompleto completo;
+	GrafoCompleto grafoCompleto;
 
 	@BeforeEach
 	void setUp() {
-		completo = new GrafoCompleto("completo", 1);
+		grafoCompleto = new GrafoCompleto("Teste Grafo Completo", 1);
+	}
+
+	@Test
+	void testGetOrdem() {
+		assertEquals(1,grafoCompleto.getOrdem());
+	}
+
+	@Test
+	void testSetOrdem() {
+		assertEquals(1,grafoCompleto.getOrdem());
+		grafoCompleto.setOrdem(2);
+		assertEquals(2,grafoCompleto.getOrdem());
 	}
 
 	@Test
 	void testCompleto() {
+        assertTrue(grafoCompleto.completo());
+        
+        grafoCompleto.addVertice(5);
+        assertFalse(grafo.completo());
 	}
 
 	@Test
 	void testExisteAresta() {
-//		GrafoCompleto completo = new GrafoCompleto("completo", 1);
-//		completo.existeAresta(1, 2);
+//		GrafoCompleto grafoCompleto = new GrafoCompleto("grafoCompleto", 1);
+//		grafoCompleto.existeAresta(1, 2);
 
 	}
 
 	@Test
 	void testExisteVertice() {
-		completo.addVertice(1); // Vertice@d9345cd
-		assertEquals(1, completo.existeVertice(1),
-				"informa erro mas esta encontrando o endereco, ou seja, existe vertice");
+
+        assertNotNull(grafoCompleto.existeVertice(1));
+
 	}
 
 	@Test

@@ -17,7 +17,6 @@ class ArestaTest {
 	@Test
 	void testDestino() {
 		assertEquals(5, aresta.destino());
-
 	}
 
 	

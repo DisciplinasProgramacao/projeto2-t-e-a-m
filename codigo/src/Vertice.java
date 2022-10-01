@@ -50,6 +50,10 @@ public class Vertice {
         return this.arestas.add(destino, new Aresta(0, destino));
     }
 
+    public boolean addAresta(int destino, int peso) {
+        return this.arestas.add(destino, new Aresta(peso, destino));
+    }
+
     /**
      * Verifica se já existe aresta entre este vértice e um destino. Método privado
      * 
@@ -58,20 +62,10 @@ public class Vertice {
      */
     public Aresta existeAresta(int destino) {
         return this.arestas.find(destino);
-
-    }
-
-    // apagar trocar por existeAresta
-    public Aresta arestaApontandoPara(int destino) {
-        if (existeAresta(destino) != null) {
-            return existeAresta(destino);
-        }
-
-        return null;
     }
 
     /**
-     * Retorna o grau do vértice
+     * Retorna o grau do vértice (número de arestas incidentes)
      * 
      * @return Grau (inteiro não negativo)
      */

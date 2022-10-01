@@ -20,26 +20,32 @@ public class GrafoCompleto extends Grafo {
 	 * 
 	 * @return TRUE para grafo completo, FALSE caso contrário
 	 */
+	@Override
 	public boolean completo() {
-		boolean resposta = true;
+        int numVertices = numVertices();
+        int numArestas = numArestas();
 
-		return resposta;
-	}
+        if (numArestas == numVertices * (numVertices - 1) / 2)
+            return true;
+        else
+            return false;
+    }
 
-	public Aresta existeAresta(int verticeA, int verticeB) {
-		// Vertice saida = this.existeVertice(origem);
-		// Vertice chegada = this.existeVertice(destino);
-		// int destino = verticeB;
-		Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
-		if (aresta != null)
-			return aresta;
+    public Aresta existeAresta(int verticeA, int verticeB) {
+        /* Vertice saida = this.existeVertice(origem);
+        * Vertice chegada = this.existeVertice(destino);
+        * int destino = verticeB;
+        */
+        Aresta aresta = vertices.find(verticeA).existeAresta(verticeB);
+        if (aresta != null)
+            return aresta;
 
-		return null;
-	}
+        return null;
+    }
 
-	public Vertice existeVertice(int idVertice) {
-		return this.vertices.find(idVertice);
-	}
+    public Vertice existeVertice(int idVertice) {
+        return this.vertices.find(idVertice);
+    }
 
 	public boolean eureliano() {
 		return false;
@@ -48,7 +54,6 @@ public class GrafoCompleto extends Grafo {
 	@Override
 	public GrafoCompleto subGrafo(Lista<Vertice> vertices) {
 		Grafo subgrafo = new Grafo("Subgrafo de " + this.nome);
-
 		return (GrafoCompleto) subgrafo;
 	}
 

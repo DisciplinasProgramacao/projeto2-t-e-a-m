@@ -1,59 +1,70 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class VerticeTest {
 
-	ABB<Aresta> arestas;
-	private boolean visitado;
-	// private int id;
+	Vertice vertice;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		vertice = new Vertice(1);
 
-		//criar um vertice
-		
-		// this.id = id;
-		this.arestas = new ABB<Aresta>();
-		this.visitado = false;
 	}
 
 	@Test
 	void testAddAresta() {
-		assertEquals(0, Aresta.class);
+		assertEquals(null, vertice.existeAresta(1));
+		vertice.addAresta(1);
+		assertNotEquals(null, vertice.existeAresta(1));
 	}
 
-	// @Test
-	// void testExisteAresta() {
-	// 	assertEquals(1, this.arestas(destino));
-	// }
+	@Test
+	void testAddArestaComPeso() {
+		assertEquals(null, vertice.existeAresta(1));
+		vertice.addAresta(1, 1);
+		assertNotEquals(null, vertice.existeAresta(1));
+	}
 
 	@Test
-	void testArestaApontandoPara() {
-
+	void testExisteAresta() {
+		assertEquals(null, vertice.existeAresta(1));
+		vertice.addAresta(1);
+		assertNotEquals(null, vertice.existeAresta(1));
 	}
 
 	@Test
 	void testGrau() {
-		assertEquals(0, arestas.size());
+		vertice.addAresta(1);
+		vertice.addAresta(2);
+		vertice.addAresta(3);
+		assertEquals(3,vertice.grau());
+		vertice.addAresta(4);
+		assertEquals(4,vertice.grau());
 	}
 
 	@Test
 	void testLimparVisita() {
-		this.visitado = false;
-		assertEquals(false, this.visitado);
+		vertice.visitar();
+		assertEquals(true, vertice.visitado());
+		vertice.limparVisita();
+		assertEquals(false, vertice.visitado());		
 	}
 
 	@Test
 	void testVisitado() {
-		assertEquals(false, this.visitado);
+		assertEquals(false, vertice.visitado());		
+		vertice.visitar();
+		assertEquals(true, vertice.visitado());
 	}
 
 	@Test
 	void testVisitar() {
-		this.visitado = true;
-		assertEquals(true, this.visitado);
+		assertEquals(false, vertice.visitado());		
+		vertice.visitar();
+		assertEquals(true, vertice.visitado());;
 	}
 
 }

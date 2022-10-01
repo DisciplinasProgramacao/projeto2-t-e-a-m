@@ -36,8 +36,27 @@ public class GrafoMutavel extends Grafo {
 	}
 
 	public void carregar(String nomeArquivo) {
-		
-	}
+        ArquivoTextoLeitura arq = new ArquivoTextoLeitura(nomeArquivo);
+        String linha = arq.ler();
+        while (linha != null) {
+
+            String[] vertices = linha.split(";");
+            int id1 = Integer.parseInt(vertices[0]);
+            int id2 = Integer.parseInt(vertices[1]);
+
+            if (existeVertice(id1) == null) {
+                this.addVertice(id1);
+            }
+            if (existeVertice(id2) == null) {
+                this.addVertice(id2);
+            }
+            this.addAresta(id1, id2);
+
+            linha = arq.ler();
+        }
+
+        arq.fecharArquivo();
+    }
 
 	public boolean delAresta(int origem, int destino) {
 		boolean arestaApagada = false;
@@ -55,9 +74,8 @@ public class GrafoMutavel extends Grafo {
 		return verticeApagada;
 	}
 
-	//verificar
-	public void salvar(String nomeArquivo) {
-		Vertice[] ver = new Vertice[vertices.size()];
+    public void salvar(String nomeArquivo) {
+        Vertice[] ver = new Vertice[vertices.size()];
         vertices.allElements(ver);
         ArquivoTextoEscrita arq = new ArquivoTextoEscrita(nomeArquivo);
 
@@ -70,6 +88,6 @@ public class GrafoMutavel extends Grafo {
             }
         }
         arq.fecharArquivo();
-	}
+    }
 
 }

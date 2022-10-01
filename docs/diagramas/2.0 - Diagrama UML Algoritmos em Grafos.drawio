@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-        <mxGraphModel dx="371" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="755" dy="992" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-0"/>
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0"/>
@@ -12,23 +12,23 @@
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-10" value="Contém" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Fri2QK8UvAn3s0wxWQ6a-9" vertex="1" connectable="0">
                     <mxGeometry x="-0.2059" y="2" relative="1" as="geometry">
-                        <mxPoint x="15" y="13" as="offset"/>
+                        <mxPoint x="-11" y="-22" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-15" value="Grafo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-15" value="Grafo" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
                     <mxGeometry x="40" y="120" width="310" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-16" value="+ nome: String {final}&#10;- vertices: ABB&lt;Vertice&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-15" vertex="1">
+                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-16" value="+ nome: String {final}&#10;# vertices: ABB&lt;Vertice&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-15" vertex="1">
                     <mxGeometry y="26" width="310" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Fri2QK8UvAn3s0wxWQ6a-15" vertex="1">
                     <mxGeometry y="70" width="310" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-18" value="+ carregar (nomeArquivo : String): void&#10;+ salvar (nomeArquivo : String) : void&#10;+ addVertice(novo : Vertice) : boolean&#10;+ existeVertice(idVertice:int) : Vertice&#10;+ addAresta(origem:int, destino:int) : boolean&#10;+ existeAresta(verticeA:int, verticeB:int) : Aresta&#10;+ numVertices(): int&#10;+ numArestas(): int&#10;+ completo() : Boolean&#10;+ subGrafo(vertices:Lista&lt;Vertice&gt;) : Grafo&#10;+ tamanho() : int&#10;+ ordem() : int&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-15" vertex="1">
+                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-18" value="+ caminhoEureliano(): Lista&lt;Vertice&gt;&#10;+ numVertices(): int&#10;+ numArestas(): int&#10;+ completo() : boolean&#10;+ eureliano(): boolean&#10;+ existeAresta(verticeA:int, verticeB:int) : Aresta&#10;+ existeVertice(idVertice:int) : Vertice&#10;+ ordem() : int&#10;+ subGrafo(vertices:Lista&lt;Vertice&gt;) : Grafo&#10;+ tamanho() : int&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-15" vertex="1">
                     <mxGeometry y="78" width="310" height="202" as="geometry"/>
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-20" value="Aresta" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-                    <mxGeometry x="510" y="421.12" width="170" height="210" as="geometry"/>
+                    <mxGeometry x="550" y="320" width="170" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-21" value="- destino: int&#10;- visitada: boolean&#10;- peso: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-20" vertex="1">
                     <mxGeometry y="26" width="170" height="54" as="geometry"/>
@@ -36,7 +36,7 @@
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-22" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Fri2QK8UvAn3s0wxWQ6a-20" vertex="1">
                     <mxGeometry y="80" width="170" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-23" value="+ destino() : int&#10;+ limparVisita () : void&#10;+ peso() : int&#10;+ visitada () : boolean&#10;+ visitar () : void&#10;&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-20" vertex="1">
+                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-23" value="+ destino() : int&#10;+ limparVisita() : void&#10;+ peso() : int&#10;+ visitada() : boolean&#10;+ visitar() : void&#10;&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-20" vertex="1">
                     <mxGeometry y="88" width="170" height="122" as="geometry"/>
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-24" value="Vertice" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -48,7 +48,7 @@
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Fri2QK8UvAn3s0wxWQ6a-24" vertex="1">
                     <mxGeometry y="80" width="280" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-27" value="+ addAresta(destino:int) : boolean&#10;+ addAresta (destino: int, peso: intt): boolean&#10;+ existeAresta(destino: int) : Aresta&#10;+ arestaApontandoPara (destino: int): Aresta&#10;+ grau() : int&#10;+ limparVisita () : void&#10;+ visitado () : boolean&#10;+ visitar () : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-24" vertex="1">
+                <mxCell id="Fri2QK8UvAn3s0wxWQ6a-27" value="+ addAresta(destino:int) : boolean&#10;+ addAresta (destino: int, peso: int): boolean&#10;+ existeAresta(destino: int) : Aresta&#10;+ grau() : int&#10;+ limparVisita() : void&#10;+ visitado() : boolean&#10;+ visitar() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Fri2QK8UvAn3s0wxWQ6a-24" vertex="1">
                     <mxGeometry y="88" width="280" height="132" as="geometry"/>
                 </mxCell>
                 <mxCell id="Fri2QK8UvAn3s0wxWQ6a-29" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.462;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.463;exitY=0.011;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Fri2QK8UvAn3s0wxWQ6a-20" target="Fri2QK8UvAn3s0wxWQ6a-27" edge="1">
@@ -62,29 +62,61 @@
                         <mxPoint x="19" y="2" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="0" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-                    <mxGeometry x="10" y="530" width="160" height="86" as="geometry"/>
+                <mxCell id="0" value="GrafoCompleto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+                    <mxGeometry x="10" y="550" width="320" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="1" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0" vertex="1">
-                    <mxGeometry y="26" width="160" height="26" as="geometry"/>
+                <mxCell id="1" value="+ ordem: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0" vertex="1">
+                    <mxGeometry y="26" width="320" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="0" vertex="1">
-                    <mxGeometry y="52" width="160" height="8" as="geometry"/>
+                    <mxGeometry y="52" width="320" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0" vertex="1">
-                    <mxGeometry y="60" width="160" height="26" as="geometry"/>
+                <mxCell id="3" value="+ completo() : Boolean&#10;+ existeAresta(verticeA:int, verticeB:int) : Aresta&#10;+ existeVertice(idVertice:int) : Vertice&#10;+ eureliano(): boolean&#10;+ subGrafo(vertices:Lista&lt;Vertice&gt;): GrafoCompleto&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="0" vertex="1">
+                    <mxGeometry y="60" width="320" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-                    <mxGeometry x="240" y="530" width="160" height="86" as="geometry"/>
+                <mxCell id="11" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.519;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="4" target="Fri2QK8UvAn3s0wxWQ6a-18">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="4" vertex="1">
-                    <mxGeometry y="26" width="160" height="26" as="geometry"/>
+                <mxCell id="4" value="GrafoMutável" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+                    <mxGeometry x="350" y="550" width="290" height="144" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="4" vertex="1">
-                    <mxGeometry y="52" width="160" height="8" as="geometry"/>
+                    <mxGeometry y="26" width="290" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="4" vertex="1">
-                    <mxGeometry y="60" width="160" height="26" as="geometry"/>
+                <mxCell id="7" value="+ addAresta(origem:int, destino:int) : boolean&#10;+ addVertice(novo:Vertice): boolean&#10;+ carregar(nomeArquivo:String):void&#10;+ delAresta(origem:int, destino:int): boolean&#10;+ delVertice(idVertice:int): boolean&#10;+ salvar (nomeArquivo:String): void&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="4" vertex="1">
+                    <mxGeometry y="34" width="290" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="dispatch" style="html=1;verticalAlign=bottom;endArrow=block;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.516;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="0" target="Fri2QK8UvAn3s0wxWQ6a-18">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="330" y="410" as="sourcePoint"/>
+                        <mxPoint x="410" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="470" y="690" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="GrafoNaoPonderado" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+                    <mxGeometry x="130" y="810" width="320" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="12">
+                    <mxGeometry y="26" width="320" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="+ addAresta(origem:int, destino:int) : boolean&#10;+ subGrafo(vertices:Lista&lt;Vertice&gt;): GrafoNaoPonderado" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="12">
+                    <mxGeometry y="34" width="320" height="56" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.481;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="16" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="GrafoPonderado" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+                    <mxGeometry x="480" y="810" width="310" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="16">
+                    <mxGeometry y="26" width="310" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="+ addAresta(origem:int, destino:int) : boolean&#10;+ addAresta(origem:int, destino:int, peso:int) : boolean&#10;+ carregar(nomeArquivo:String):void&#10;+ subGrafo(vertices:Lista&lt;Vertice&gt;): GrafoPonderado" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="16">
+                    <mxGeometry y="34" width="310" height="86" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
