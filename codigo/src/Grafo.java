@@ -122,7 +122,7 @@ public class Grafo {
         return null;
     }
 
-    private int numVertices() {
+    public int numVertices() {
         return this.ordem();
 
     }
