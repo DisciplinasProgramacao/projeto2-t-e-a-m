@@ -37,6 +37,10 @@ public class Grafo {
         this.vertices = new ABB<>();
     }
 
+    public Vertice caminhoEureliano(){
+
+    }
+
 
     public int numVertices() {
         return this.ordem();
@@ -102,6 +106,7 @@ public class Grafo {
     public int ordem() {
         return this.vertices.size();
     }
+    
     public Vertice existeVertice(int idVertice) {
         return this.vertices.find(idVertice);
     }
