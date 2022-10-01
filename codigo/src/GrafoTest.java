@@ -35,17 +35,14 @@ public class GrafoTest {
 
     @Test
     void testAddVertice() {
-        grafo.criarCompleto(grafo, 5);
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        grafo.addVertice(3);
+        grafo.addVertice(4);
+        grafo.addVertice(5);
+        assertEquals(5,grafo.numVertices());
         grafo.addVertice(6);
-        assertEquals(6,grafo.grau());
-
-//verificar o efeito dele dar o assert na ordem
-
-        // boolean ver1 = grafo.addVertice(1);
-        // boolean ver2 = grafo.addVertice(2);
-        // assertTrue(ver1);
-        // assertTrue(ver2);
-
+        assertEquals(6,grafo.numVertices());
     }
 
     @Test
