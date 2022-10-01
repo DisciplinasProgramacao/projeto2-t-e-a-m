@@ -47,56 +47,56 @@ public class GrafoTest {
 
     @Test
     void testExisteVertice() {
-
-        //adiciona 3 verticer e verificar se aquele que adicionou existe
+        assertEquals(null, grafo.existeVertice(1));
         grafo.addVertice(1);
-
-        Vertice ext1 = grafo.existeVertice(1);
-        assertNotEquals(ext1, null);
-        Vertice ext3 = grafo.existeVertice(3);
-        assertEquals(ext3, null);
-
-    }
+        grafo.addVertice(3);
+        assertNotEquals(2, grafo.existeVertice(2));
+     }
 
     @Test
     void testAddAresta() {
         grafo.addVertice(1);
         grafo.addVertice(2);
         grafo.addVertice(3);
-
-
-        boolean adicionou1 = grafo.addAresta(1, 2);
-        boolean adicionou2 = grafo.addAresta(2, 3);
-        boolean adicionou3 = grafo.addAresta(3, 4);
-        assertTrue(adicionou1);
-        assertTrue(adicionou2);
-        assertFalse(adicionou3);
+        assertTrue(grafo.addAresta(1, 2));
+        assertTrue(grafo.addAresta(2, 3));
+        assertFalse(grafo.addAresta(3, 4));
     }
 
     @Test
     void testExisteAresta() {
         grafo.addVertice(1);
         grafo.addVertice(2);
+        grafo.addVertice(3);
         grafo.addAresta(1, 2);
+        grafo.addAresta(2, 3);
+        grafo.addAresta(3, 4);
+        
+
 
        // assertEquals(null, existeAresta(1,4));
 
     }
 
     @Test
+
+
+
+
+    @Test
     void testCompleto() {
 
-        //carregar grafo complexo e depois testar
-        grafo.addVertice(1);
-        grafo.addVertice(2);
-        grafo.addVertice(3);
-        grafo.addVertice(4);
-        grafo.addAresta(1, 2);
-        grafo.addAresta(1, 3);
-        grafo.addAresta(1, 4);
-        grafo.addAresta(2, 3);
-        grafo.addAresta(2, 4);
-        grafo.addAresta(3, 4);
+        // //carregar grafo complexo e depois testar
+        // grafo.addVertice(1);
+        // grafo.addVertice(2);
+        // grafo.addVertice(3);
+        // grafo.addVertice(4);
+        // grafo.addAresta(1, 2);
+        // grafo.addAresta(1, 3);
+        // grafo.addAresta(1, 4);
+        // grafo.addAresta(2, 3);
+        // grafo.addAresta(2, 4);
+        // grafo.addAresta(3, 4);
 
         assertTrue(grafo.completo());
         
