@@ -79,24 +79,30 @@ public class GrafoTest {
     }
 
     @Test
+    void testNumVertices(){
+
+    }
+
+    @Test
+    void testNumArestas(){
+
+    }
 
 
 
 
     @Test
     void testCompleto() {
-
-        // //carregar grafo complexo e depois testar
-        // grafo.addVertice(1);
-        // grafo.addVertice(2);
-        // grafo.addVertice(3);
-        // grafo.addVertice(4);
-        // grafo.addAresta(1, 2);
-        // grafo.addAresta(1, 3);
-        // grafo.addAresta(1, 4);
-        // grafo.addAresta(2, 3);
-        // grafo.addAresta(2, 4);
-        // grafo.addAresta(3, 4);
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        grafo.addVertice(3);
+        grafo.addVertice(4);
+        grafo.addAresta(1, 2);
+        grafo.addAresta(1, 3);
+        grafo.addAresta(1, 4);
+        grafo.addAresta(2, 3);
+        grafo.addAresta(2, 4);
+        grafo.addAresta(3, 4);
 
         assertTrue(grafo.completo());
         
@@ -114,6 +120,15 @@ public class GrafoTest {
 
         int ordem = grafo.ordem();
         assertEquals(3, ordem);
+    }
+
+    @Test
+    void testCriarCompleto() {
+        grafo.criarCompleto(grafo,4);
+        assertTrue(grafo.completo());     
+        grafo.addVertice(5);
+        assertFalse(grafo.completo());
+
     }
 
 

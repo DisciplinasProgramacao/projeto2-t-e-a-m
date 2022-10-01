@@ -115,7 +115,7 @@ public class Grafo {
         * Vertice chegada = this.existeVertice(destino);
         * int destino = verticeB;
         */
-        Aresta aresta = vertices.find(verticeA).arestaApontandoPara(verticeB);
+        Aresta aresta = vertices.find(verticeA).existeAresta(verticeB);
         if (aresta != null)
             return aresta;
 
