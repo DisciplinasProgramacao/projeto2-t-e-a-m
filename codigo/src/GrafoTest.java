@@ -103,11 +103,9 @@ public class GrafoTest {
         grafo.addAresta(2, 3);
         grafo.addAresta(2, 4);
         grafo.addAresta(3, 4);
-
         assertTrue(grafo.completo());
         
         grafo.addVertice(5);
-
         assertFalse(grafo.completo());
 
     }
