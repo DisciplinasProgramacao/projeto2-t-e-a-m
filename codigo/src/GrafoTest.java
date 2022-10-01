@@ -1,8 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.io.*;
-
 
 public class GrafoTest {
 
@@ -28,13 +26,25 @@ public class GrafoTest {
     }
 
     @Test
+    void testSalvar() {
+        String caminho = "C:/Users/andre/github-classroom/DisciplinasProgramacao/projeto2-t-e-a-m/codigo/src/grafo.txt";
+        grafo.carregar(caminho);
+        grafo.salvar(caminho);
+    }
+
+
+    @Test
     void testAddVertice() {
+        grafo.criarCompleto(grafo, 5);
+        grafo.addVertice(6);
+        assertEquals(6,grafo.grau());
+
 //verificar o efeito dele dar o assert na ordem
 
-        boolean ver1 = grafo.addVertice(1);
-        boolean ver2 = grafo.addVertice(2);
-        assertTrue(ver1);
-        assertTrue(ver2);
+        // boolean ver1 = grafo.addVertice(1);
+        // boolean ver2 = grafo.addVertice(2);
+        // assertTrue(ver1);
+        // assertTrue(ver2);
 
     }
 
@@ -112,14 +122,6 @@ public class GrafoTest {
 
 
 
-
-    @Test
-    void testSalvar() {
-        String caminho = "C:/Users/andre/github-classroom/DisciplinasProgramacao/projeto2-t-e-a-m/codigo/src/grafo.txt";
-        //String escreve = "";
-        grafo.carregar(caminho);
-        grafo.salvar(caminho);
-    }
 
 
     // busca em profundidade - gera uma arvore

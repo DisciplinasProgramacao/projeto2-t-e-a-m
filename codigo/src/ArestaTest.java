@@ -10,19 +10,31 @@ class ArestaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		aresta = new Aresta(0, 5);
+		aresta = new Aresta(1, 5);
 	}
 
-	@Test
-	void testPeso() {
-		assertEquals(0, aresta.peso());
-	}
-
+	
 	@Test
 	void testDestino() {
 		assertEquals(5, aresta.destino());
 
 	}
+
+	
+	@Test
+	void testLimparVisita() {
+		aresta.visitar();
+		assertTrue(aresta.visitada());
+		aresta.limparVisita();
+		assertFalse(aresta.visitada());
+
+	}
+
+	@Test
+	void testPeso() {
+		assertEquals(1, aresta.peso());
+	}
+
 
 	@Test
 	void testVisitar() {
@@ -30,16 +42,11 @@ class ArestaTest {
 		assertTrue(aresta.visitada());
 	}
 
-	@Test
-	void testLimparVisita() {
-		aresta.limparVisita();
-		assertFalse(aresta.visitada());
-
-	}
 
 	@Test
 	void testVisitada() {
-		assertFalse(aresta.visitada());
+		aresta.visitar();
+		assertTrue(aresta.visitada());
 	}
 
 }

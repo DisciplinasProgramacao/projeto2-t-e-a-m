@@ -148,16 +148,15 @@ public class Grafo {
      * 
      * @return TRUE para grafo completo, FALSE caso contrário
      * 
-     * NÃO ESTA FUNCIONANDO AINDA
      */
     public boolean completo() {
         int numVertices = numVertices();
         int numArestas = numArestas();
 
-        if (numArestas != numVertices * (numVertices - 1) / 2)
-            return false;
-        else
+        if (numArestas == numVertices * (numVertices - 1) / 2)
             return true;
+        else
+            return false;
     }
 
     public Grafo subGrafo(Lista<Vertice> vertices) {
