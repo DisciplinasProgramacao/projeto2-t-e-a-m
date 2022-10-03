@@ -38,7 +38,10 @@ public class Grafo {
     }
 
     public Vertice caminhoEureliano() {
-
+		if (ordem() > 0 && (ordem() % 2) == 1) {
+			return true;
+		} else
+			return false;
     }
 
     public int numVertices() {
