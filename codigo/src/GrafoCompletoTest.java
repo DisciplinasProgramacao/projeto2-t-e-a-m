@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,19 +10,19 @@ class GrafoCompletoTest {
 
 	@BeforeEach
 	void setUp() {
-		grafoCompleto = new GrafoCompleto("Teste Grafo Completo", 5);
+		grafoCompleto = new GrafoCompleto("Teste Grafo Completo", 1);
 	}
 
 	@Test
 	void testGetOrdem() {
-		assertEquals(5,grafoCompleto.getOrdem());
+		assertEquals(1,grafoCompleto.getOrdem());
 	}
 
 	@Test
 	void testSetOrdem() {
-		assertEquals(5,grafoCompleto.getOrdem());
-		grafoCompleto.setOrdem(6);
-		assertEquals(7,grafoCompleto.getOrdem());
+		assertEquals(1,grafoCompleto.getOrdem());
+		grafoCompleto.setOrdem(2);
+		assertEquals(2,grafoCompleto.getOrdem());
 	}
 
 	@Test
@@ -29,7 +30,7 @@ class GrafoCompletoTest {
         assertTrue(grafoCompleto.completo());
         
         grafoCompleto.addVertice(5);
-        assertFalse(grafoCompleto.completo());
+        assertFalse(grafo.completo());
 	}
 
 	@Test
