@@ -4,6 +4,52 @@ public class GrafoCompleto extends Grafo {
 
 	public GrafoCompleto(String nome, int ordem) {
 		super(nome);
+		this.ordem = ordem;
+		int destino;
+		int origem;
+		int id
+
+		for (int i = 1; i < (ordem + 1); i++) {
+			id=i;
+			addVertice(id);
+		}
+			for (int j = i; j > 1; j++) {
+				origem = i - 1;
+				destino = j;
+				addAresta(origem, destino);
+			}
+		}
+
+	/**
+	 * Adiciona uma aresta entre dois vértices do grafo. Não verifica se os vértices
+	 * pertencem ao grafo.
+	 * 
+	 * @param origem  Vértice de origem
+	 * @param destino Vértice de destino
+	 */
+	public boolean addAresta(int origem, int destino) {
+
+		boolean adicionou = false;
+		Vertice saida = this.existeVertice(origem);
+		Vertice chegada = this.existeVertice(destino);
+
+		if (saida != null && chegada != null) {
+			saida.addAresta(1, destino);
+			chegada.addAresta(1, origem);
+			adicionou = true;
+		}
+
+		return adicionou;
+
+	}
+
+	/**
+	 * Adiciona, se possível, um vértice ao grafo. O vértice é auto-nomeado com o
+	 * próximo id disponível.
+	 */
+	public boolean addVertice(int id) {
+		Vertice novo = new Vertice(id);
+		return this.vertices.add(id, novo);
 		setOrdem(ordem);
 	}
 
@@ -22,34 +68,41 @@ public class GrafoCompleto extends Grafo {
 	 */
 	@Override
 	public boolean completo() {
-        int numVertices = numVertices();
-        int numArestas = numArestas();
+		int numVertices = numVertices();
+		int numArestas = numArestas();
 
-        if (numArestas == numVertices * (numVertices - 1) / 2)
-            return true;
-        else
-            return false;
-    }
-
-    public Aresta existeAresta(int verticeA, int verticeB) {
-        /* Vertice saida = this.existeVertice(origem);
-        * Vertice chegada = this.existeVertice(destino);
-        * int destino = verticeB;
-        */
-        Aresta aresta = vertices.find(verticeA).existeAresta(verticeB);
-        if (aresta != null)
-            return aresta;
-
-        return null;
-    }
-
-    public Vertice existeVertice(int idVertice) {
-        return this.vertices.find(idVertice);
-    }
-
-	public boolean eureliano() {
-		return false;
+		if (numArestas == numVertices * (numVertices - 1) / 2)
+			return true;
+		else
+			return false;
 	}
+
+	@Override
+	public Aresta existeAresta(int verticeA, int verticeB) {
+		/*
+		 * Vertice saida = this.existeVertice(origem);
+		 * Vertice chegada = this.existeVertice(destino);
+		 * int destino = verticeB;
+		 */
+		Aresta aresta = vertices.find(verticeA).existeAresta(verticeB);
+		if (aresta != null)
+			return aresta;
+
+		return null;
+	}
+
+	@Override
+	public Vertice existeVertice(int idVertice) {
+		return this.vertices.find(idVertice);
+	}
+
+	@Override
+	public boolean eureliano() {
+		if (ordem > 0 && (ordem % 2) == 1) {
+			return true;
+		} else
+			return false;
+		return false;
 
 	@Override
 	public GrafoCompleto subGrafo(Lista<Vertice> vertices) {
