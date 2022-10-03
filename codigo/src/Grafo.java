@@ -38,11 +38,33 @@ public class Grafo {
     }
 
     public Vertice caminhoEureliano() {
-		if (ordem() > 0 && (ordem() % 2) == 1) {
-			return true;
-		} else
-			return false;
+
     }
+    
+	/**
+	 * Adiciona uma aresta entre dois vértices do grafo. Não verifica se os vértices
+	 * pertencem ao grafo.
+	 * 
+	 * @param origem  Vértice de origem
+	 * @param destino Vértice de destino
+	 */
+	public boolean addAresta(int origem, int destino) {
+		boolean adicionou = false;
+		Vertice saida = this.existeVertice(origem);
+		Vertice chegada = this.existeVertice(destino);
+		if (saida != null && chegada != null) {
+			saida.addAresta(destino);
+			chegada.addAresta(origem);
+			adicionou = true;
+		}
+
+		return adicionou;
+
+	}
+    public boolean addVertice(int id) {
+		Vertice novo = new Vertice(id);
+		return this.vertices.add(id, novo);
+	}
 
     public int numVertices() {
         return this.ordem();
@@ -82,10 +104,10 @@ public class Grafo {
     }
 
     public boolean eureliano() {
-        if (ordem > 0 && (ordem % 2) == 1) {
-            return true;
-        } else
-            return false;
+		if (ordem() > 0 && (ordem() % 2) == 1) {
+			return true;
+		} else
+			return false;
     }
 
     public Aresta existeAresta(int verticeA, int verticeB) {

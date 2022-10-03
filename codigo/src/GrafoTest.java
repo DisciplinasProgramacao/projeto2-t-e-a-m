@@ -1,3 +1,8 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,11 +22,22 @@ public class GrafoTest {
 
     @Test
     void testNumVertices() {
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        assertEquals(2, grafo.numVertices());
 
     }
 
     @Test
     void testNumArestas() {
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        grafo.addVertice(3);
+        grafo.addVertice(4);
+        grafo.addAresta(1, 2);
+        grafo.addAresta(2, 3);
+        grafo.addAresta(3, 4);
+        assertEquals(3, grafo.numArestas());
 
     }
 
@@ -86,6 +102,15 @@ public class GrafoTest {
 
     @Test
     void testTamanho() {
+        grafo.addVertice(1);
+        grafo.addVertice(2);
+        grafo.addVertice(3);
+        grafo.addVertice(4);
+        grafo.addAresta(1, 2);
+        grafo.addAresta(2, 3);
+        grafo.addAresta(3, 4);
+        assertEquals(7, grafo.tamanho());
+
 
     }
 
