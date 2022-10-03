@@ -7,18 +7,18 @@ public class GrafoCompleto extends Grafo {
 		this.ordem = ordem;
 		int destino;
 		int origem;
-		int id
+		int i = 1;
 
-		for (int i = 1; i < (ordem + 1); i++) {
-			id=i;
+		for (int i; i < (ordem + 1); i++) {
+			int id = i;
 			addVertice(id);
 		}
-			for (int j = i; j > 1; j++) {
-				origem = i - 1;
-				destino = j;
-				addAresta(origem, destino);
-			}
+		for (int j = i; j > 1; j++) {
+			origem = i - 1;
+			destino = j;
+			addAresta(origem, destino);
 		}
+	}
 
 	/**
 	 * Adiciona uma aresta entre dois vértices do grafo. Não verifica se os vértices
