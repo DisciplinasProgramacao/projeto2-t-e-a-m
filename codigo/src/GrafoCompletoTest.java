@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,19 +11,19 @@ class GrafoCompletoTest {
 
 	@BeforeEach
 	void setUp() {
-		grafoCompleto = new GrafoCompleto("Teste Grafo Completo", 1);
+		grafoCompleto = new GrafoCompleto("Teste Grafo Completo", 5);
 	}
 
 	@Test
 	void testGetOrdem() {
-		assertEquals(1,grafoCompleto.getOrdem());
+		assertEquals(5,grafoCompleto.getOrdem());
 	}
 
 	@Test
 	void testSetOrdem() {
-		assertEquals(1,grafoCompleto.getOrdem());
-		grafoCompleto.setOrdem(2);
-		assertEquals(2,grafoCompleto.getOrdem());
+		assertEquals(5,grafoCompleto.getOrdem());
+		grafoCompleto.setOrdem(6);
+		assertEquals(6,grafoCompleto.getOrdem());
 	}
 
 	@Test
